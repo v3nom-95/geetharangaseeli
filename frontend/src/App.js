@@ -33,8 +33,8 @@ function App() {
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Passionate freelancer specializing in social media marketing and strategy consulting. 
-                Currently pursuing BTech in Computer Science Engineering, bringing a unique blend of 
-                technical knowledge and creative marketing expertise to help brands grow their digital presence.
+                I bring creative marketing expertise and fresh perspectives to help brands grow their 
+                digital presence and connect meaningfully with their audiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-pink-600 text-white px-8 py-3 rounded-full hover:bg-pink-700 transition-colors shadow-lg">
