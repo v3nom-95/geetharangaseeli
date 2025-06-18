@@ -98,8 +98,8 @@ function App() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800">BTech Computer Science Student</h4>
-                    <p className="text-gray-600">Currently pursuing my degree, combining technical skills with creative marketing</p>
+                    <h4 className="font-semibold text-gray-800">Creative Marketing Enthusiast</h4>
+                    <p className="text-gray-600">Passionate about creating engaging content and building meaningful brand connections</p>
                   </div>
                 </div>
                 <div className="flex items-start">
