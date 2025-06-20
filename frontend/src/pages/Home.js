@@ -224,26 +224,60 @@ function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-pink-600 to-rose-600 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">Fresh</div>
-              <div className="text-pink-100">Perspective</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <div className="text-pink-100">Dedicated</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <div className="text-pink-100">Support</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">∞</div>
-              <div className="text-pink-100">Creativity</div>
-            </div>
+      {/* Advanced Stats Section */}
+      <section className="section-advanced bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 text-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-y-1"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 font-display">
+              Why Choose Me?
+            </h2>
+            <p className="text-xl text-pink-100 max-w-2xl mx-auto">
+              Combining fresh perspectives with proven strategies to deliver exceptional results
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { 
+                value: "Fresh", 
+                label: "Perspective", 
+                description: "Innovative approaches",
+                icon: "💡"
+              },
+              { 
+                value: "100%", 
+                label: "Dedicated", 
+                description: "Fully committed to your success",
+                icon: "🎯"
+              },
+              { 
+                value: "24/7", 
+                label: "Support", 
+                description: "Always here when you need me",
+                icon: "⚡"
+              },
+              { 
+                value: "∞", 
+                label: "Creativity", 
+                description: "Limitless creative solutions",
+                icon: "🚀"
+              }
+            ].map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:transform hover:scale-105">
+                  <div className="text-4xl mb-4">{stat.icon}</div>
+                  <div className="text-4xl lg:text-5xl font-bold mb-2 font-display text-white group-hover:text-yellow-300 transition-colors">
+                    {stat.value}
+                  </div>
+                  <div className="text-pink-100 font-semibold text-lg mb-2">{stat.label}</div>
+                  <div className="text-sm text-pink-200">{stat.description}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
