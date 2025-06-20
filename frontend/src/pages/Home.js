@@ -1,42 +1,144 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+    
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100,
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <div>
-      {/* Hero Section */}
-      <section className="pt-20 pb-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="lg:w-1/2 mb-10 lg:mb-0">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
-                Hi, I'm <span className="text-pink-600">Geetha</span>
+      {/* Advanced Hero Section */}
+      <section className="hero-advanced min-h-screen flex items-center justify-center relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(236, 72, 153, 0.15) 0%, transparent 50%)`
+          }}
+        ></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-pink-200 rounded-full blur-xl opacity-60 animate-float-advanced"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 bg-purple-200 rounded-full blur-xl opacity-40 animate-float-advanced" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-yellow-200 rounded-full blur-xl opacity-50 animate-float-advanced" style={{ animationDelay: '4s' }}></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Hero Content */}
+            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-slide-in-left' : 'opacity-0'}`}>
+              <div className="mb-6">
+                <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-pink-700 font-medium mb-6 hover:bg-white/30 transition-all duration-300">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                  Available for freelance projects
+                </div>
+              </div>
+              
+              <h1 className="section-title-advanced leading-tight mb-8">
+                Hi, I'm <span className="relative">
+                  <span className="text-gradient">Geetha</span>
+                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full transform scale-x-0 animate-[scaleX_1s_ease-out_0.5s_forwards] origin-left"></div>
+                </span>
               </h1>
-              <h2 className="text-2xl lg:text-3xl text-gray-600 mb-6">
-                Social Media Manager & Strategist
-              </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              
+              <div className="mb-8">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 font-display">
+                  Social Media Manager & 
+                  <span className="block text-gradient">Creative Strategist</span>
+                </h2>
+              </div>
+              
+              <p className="section-subtitle-advanced max-w-xl">
                 Passionate freelancer specializing in social media marketing and strategy consulting. 
                 I bring creative marketing expertise and fresh perspectives to help brands grow their 
                 digital presence and connect meaningfully with their audiences.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact" className="bg-pink-600 text-white px-8 py-3 rounded-full hover:bg-pink-700 transition-colors shadow-lg text-center">
-                  Get In Touch
+              
+              <div className="flex flex-col sm:flex-row gap-6 mb-12">
+                <Link 
+                  to="/contact" 
+                  className="btn-advanced text-white inline-flex items-center justify-center space-x-2 group"
+                >
+                  <span>Get In Touch</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </Link>
-                <Link to="/portfolio" className="border-2 border-pink-600 text-pink-600 px-8 py-3 rounded-full hover:bg-pink-600 hover:text-white transition-colors text-center">
-                  View My Work
+                <Link 
+                  to="/portfolio" 
+                  className="btn-secondary-advanced inline-flex items-center justify-center space-x-2 group"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  <span>View My Work</span>
                 </Link>
               </div>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-pink-600 font-display">50+</div>
+                  <div className="text-sm text-gray-600 font-medium">Projects Completed</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-pink-600 font-display">25+</div>
+                  <div className="text-sm text-gray-600 font-medium">Happy Clients</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-pink-600 font-display">2+</div>
+                  <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+                </div>
+              </div>
             </div>
-            <div className="lg:w-1/2 flex justify-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-pink-200 rounded-full blur-2xl opacity-30"></div>
-                <img 
-                  src="https://images.pexels.com/photos/8638300/pexels-photo-8638300.jpeg" 
-                  alt="Social Media Manager" 
-                  className="relative w-80 h-80 object-cover rounded-full shadow-2xl"
-                />
+            
+            {/* Hero Image */}
+            <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${isLoaded ? 'animate-slide-in-right' : 'opacity-0'}`}>
+              <div className="relative group">
+                {/* Background Decorations */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full blur-xl opacity-30 group-hover:opacity-40 transition-opacity animate-pulse"></div>
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-yellow-200 to-pink-200 rounded-full blur-2xl opacity-40 animate-float-advanced"></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br from-purple-200 to-blue-200 rounded-full blur-2xl opacity-40 animate-float-advanced" style={{ animationDelay: '3s' }}></div>
+                
+                {/* Main Image */}
+                <div className="relative z-10">
+                  <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white/20 backdrop-blur-sm">
+                    <img 
+                      src="https://images.pexels.com/photos/8638300/pexels-photo-8638300.jpeg" 
+                      alt="Social Media Manager" 
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  
+                  {/* Floating Badge */}
+                  <div className="absolute -bottom-4 -right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20 animate-bounce">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-800 text-sm">Available</div>
+                        <div className="text-xs text-gray-600">Ready to work</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
