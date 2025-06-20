@@ -145,50 +145,81 @@ function Home() {
         </div>
       </section>
 
-      {/* Quick Overview */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">What I Do</h2>
-            <p className="text-lg text-gray-600">
-              Helping brands create meaningful connections through strategic social media marketing
+      {/* Advanced Services Overview */}
+      <section className="section-advanced bg-white relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-6 py-3 bg-pink-50 rounded-full border border-pink-100 text-pink-700 font-medium mb-8">
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
+              </svg>
+              What I Do Best
+            </div>
+            <h2 className="section-title-advanced text-center">
+              Transforming Brands Through
+              <br />
+              <span className="text-gradient">Strategic Social Media</span>
+            </h2>
+            <p className="section-subtitle-advanced max-w-3xl mx-auto">
+              Helping brands create meaningful connections through strategic social media marketing that drives real results and lasting engagement.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-pink-100 to-rose-100 p-6 rounded-2xl mb-6 group-hover:scale-105 transition-transform">
-                <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd"/>
-                </svg>
+          
+          <div className="grid lg:grid-cols-3 gap-8 stagger-children">
+            {[
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd"/>
+                  </svg>
+                ),
+                title: "Social Media Marketing",
+                description: "Creating engaging content and managing social media presence across all platforms with data-driven strategies.",
+                features: ["Content Creation", "Community Management", "Brand Building", "Analytics"],
+                color: "from-pink-500 to-rose-500"
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                    <path fillRule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                  </svg>
+                ),
+                title: "Strategy Consulting",
+                description: "Developing data-driven strategies that align with your business goals and target audience for maximum impact.",
+                features: ["Digital Strategy", "Analytics", "Growth Planning", "Market Research"],
+                color: "from-purple-500 to-indigo-500"
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                  </svg>
+                ),
+                title: "Brand Building",
+                description: "Helping brands establish a strong digital presence and authentic voice that resonates with their audience.",
+                features: ["Brand Voice", "Visual Identity", "Storytelling", "Reputation Management"],
+                color: "from-teal-500 to-cyan-500"
+              }
+            ].map((service, index) => (
+              <div key={index} className="card-advanced group hover-lift">
+                <div className="p-8">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4 font-display">{service.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <span key={featureIndex} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-pink-100 hover:text-pink-700 transition-colors">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className={`h-1 bg-gradient-to-r ${service.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Social Media Marketing</h3>
-              <p className="text-gray-600">
-                Creating engaging content and managing social media presence across all platforms.
-              </p>
-            </div>
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-pink-100 to-rose-100 p-6 rounded-2xl mb-6 group-hover:scale-105 transition-transform">
-                <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                  <path fillRule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Strategy Consulting</h3>
-              <p className="text-gray-600">
-                Developing data-driven strategies that align with your business goals and audience.
-              </p>
-            </div>
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-pink-100 to-rose-100 p-6 rounded-2xl mb-6 group-hover:scale-105 transition-transform">
-                <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Brand Building</h3>
-              <p className="text-gray-600">
-                Helping brands establish a strong digital presence and authentic voice online.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
