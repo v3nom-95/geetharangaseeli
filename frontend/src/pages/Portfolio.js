@@ -2,82 +2,190 @@ import React, { useState } from 'react';
 
 function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  // Sample portfolio data - client-wise organization
+  // Categorize both works as 'food' for filtering
   const portfolioData = [
     {
       id: 1,
-      clientName: "Bloom Cafe",
-      category: "food",
-      industry: "Food & Beverage",
-      description: "Complete social media management for a trendy local cafe, focusing on food photography and community engagement.",
-      services: ["Content Creation", "Account Management", "Community Building"],
+      clientName: "Fox In The Field",
+      category: "food-beverage",
+      industry: "Brewery & Restaurant",
+      description: "Comprehensive social media management for Fox In The Field, a popular brewery and restaurant in Whitefield. Focused on content creation, engagement, and brand building.",
+      services: [
+        "Instagram Content Creation",
+        "Profile Optimization",
+        "Community Engagement",
+        "Analytics & Reporting"
+      ],
       results: [
-        "300% increase in Instagram followers",
-        "150% boost in engagement rate",
-        "40% increase in foot traffic"
+        "Significant increase in followers and engagement",
+        "Consistent brand presence",
+        "High-performing posts and stories"
       ],
       images: [
-        "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg"
+        "https://i.imgur.com/foxinthefield-sample.jpg"
       ],
-      platforms: ["Instagram", "Facebook", "TikTok"],
-      duration: "6 months",
+      platforms: ["Instagram"],
+      duration: "Ongoing",
       testimonial: {
-        text: "Geetha transformed our social media presence completely. Our engagement and foot traffic have never been better!",
-        author: "Sarah Johnson, Owner"
-      }
+        text: "Our Instagram has never looked better! The content and engagement have brought in more customers and built a loyal community.",
+        author: "Fox In The Field Team"
+      },
+      instagram: "https://instagram.com/foxinthe_field"
     },
     {
       id: 2,
-      clientName: "TechStart Solutions",
-      category: "tech",
-      industry: "Technology",
-      description: "Strategic social media consulting for a B2B tech startup, focusing on thought leadership and lead generation.",
-      services: ["Strategy Development", "Content Planning", "Lead Generation"],
+      clientName: "The Dome Cafe - HSR Layout",
+      category: "food-beverage",
+      industry: "Cafe & Restaurant",
+      description: "Social media management and content strategy for The Dome Cafe, India's first dome-shaped cafe. Focused on food photography, event promotion, and audience growth.",
+      services: [
+        "Instagram Content Creation",
+        "Event Promotion",
+        "Brand Storytelling",
+        "Analytics & Reporting"
+      ],
       results: [
-        "200% increase in LinkedIn connections",
-        "85% improvement in lead quality",
-        "50 new qualified leads per month"
+        "Steady follower growth",
+        "Increased engagement on posts",
+        "Successful event promotions"
       ],
       images: [
-        "https://images.unsplash.com/photo-1595349785606-5982d59ef635"
+        "https://i.imgur.com/thedomecafe-sample.jpg"
       ],
-      platforms: ["LinkedIn", "Twitter", "YouTube"],
-      duration: "4 months",
+      platforms: ["Instagram"],
+      duration: "Ongoing",
       testimonial: {
-        text: "Her strategic approach helped us establish thought leadership in our industry and generated high-quality leads.",
-        author: "Mike Chen, Founder"
-      }
+        text: "The Dome Cafe's Instagram is now a true reflection of our vibe and food. The creative posts and stories have helped us reach more food lovers!",
+        author: "The Dome Cafe Team"
+      },
+      instagram: "https://instagram.com/thedomecafe_hsr_layout"
     },
     {
       id: 3,
-      clientName: "Bella Boutique",
-      category: "fashion",
-      industry: "Fashion & Retail",
-      description: "Instagram-focused campaign for a fashion boutique, emphasizing visual storytelling and influencer partnerships.",
-      services: ["Visual Content", "Influencer Outreach", "Campaign Management"],
+      clientName: "LM Farms",
+      category: "hotel-resort",
+      industry: "Hotel Resort",
+      description: "Social media growth and analytics for LM Farms, a luxury nature resort. Focused on Instagram strategy, content, and audience growth.",
+      services: [
+        "Instagram Growth Strategy",
+        "Content Planning",
+        "Analytics & Insights",
+        "Community Engagement"
+      ],
       results: [
-        "500% increase in online sales",
-        "250% growth in Instagram followers",
-        "90% increase in website traffic"
+        "886.5K views in 30 days",
+        "1.9K total followers",
+        "+8% follower growth in 90 days"
       ],
       images: [
-        "https://images.pexels.com/photos/8638300/pexels-photo-8638300.jpeg"
+        "/images/p3.png"
       ],
-      platforms: ["Instagram", "Pinterest", "Facebook"],
-      duration: "8 months",
+      platforms: ["Instagram"],
+      duration: "Ongoing",
       testimonial: {
-        text: "Our online presence and sales have skyrocketed since working with Geetha. She really understands our brand!",
-        author: "Emma Rodriguez, Creative Director"
-      }
+        text: "The Instagram growth and engagement for LM Farms has been fantastic. The analytics and content have helped us reach more guests and build our brand.",
+        author: "LM Farms Team"
+      },
+      instagram: "https://instagram.com/lm_farms_"
+    },
+    {
+      id: 4,
+      clientName: "La Casa Brewery + Kitchen",
+      category: "food-beverage",
+      industry: "Brewery",
+      description: "Instagram management and analytics for La Casa Brewery + Kitchen. Focused on content creation, engagement, and audience growth for a vibrant brewery brand.",
+      services: [
+        "Instagram Content Creation",
+        "Growth Analytics",
+        "Community Engagement",
+        "Reels & Stories Strategy"
+      ],
+      results: [
+        "7,052 followers",
+        "25,781 views in 90 days",
+        "+21.9% follower growth in 90 days"
+      ],
+      images: [
+        "/images/lacasa1.png"
+      ],
+      platforms: ["Instagram"],
+      duration: "Ongoing",
+      testimonial: {
+        text: "La Casa Brewery's Instagram has seen a huge boost in engagement and reach. The creative content and analytics have made a real difference!",
+        author: "La Casa Brewery Team"
+      },
+      instagram: "https://instagram.com/lacasabrewery"
+    },
+    {
+      id: 5,
+      clientName: "Aurum Brew Works",
+      category: "food-beverage",
+      industry: "Brewery",
+      description: "Social media management and growth strategy for Aurum Brew Works. Focused on increasing views, interactions, and followers through engaging content.",
+      services: [
+        "Instagram Content Creation",
+        "Audience Growth Strategy",
+        "Engagement Boost",
+        "Performance Analytics"
+      ],
+      results: [
+        "861.0K views in 30 days",
+        "5.2K interactions",
+        "626 new followers",
+        "41.6% posts content type",
+        "31.0% reels content type"
+      ],
+      images: [
+        "/images/aurum1.png"
+      ],
+      platforms: ["Instagram"],
+      duration: "Ongoing",
+      testimonial: {
+        text: "Working with Geetha has significantly boosted our Instagram presence. The views and interactions have seen a remarkable increase!",
+        author: "Aurum Brew Works Team"
+      },
+      instagram: "https://instagram.com/aurumbrews"
+    },
+    {
+      id: 6,
+      clientName: "Anagha | Ethnic Wear for Women",
+      category: "fashion",
+      industry: "Ethnic Wear / Fashion",
+      description: "Social media management and content strategy for Anagha, a curated ethnic wear brand. Focused on increasing followers, engagement, and brand awareness through creative content and community interaction.",
+      services: [
+        "Instagram Content Creation",
+        "Community Engagement",
+        "Brand Storytelling",
+        "Analytics & Reporting"
+      ],
+      results: [
+        "4,765 followers",
+        "861 posts",
+        "Consistent engagement",
+        "Enhanced brand presence"
+      ],
+      images: [
+        "/images/p5.png"
+      ],
+      platforms: ["Instagram"],
+      duration: "Ongoing",
+      testimonial: {
+        text: "The Instagram page for Anagha has seen steady growth in followers and engagement. The creative content and consistent posting have helped build a strong brand presence!",
+        author: "Anagha Team"
+      },
+      instagram: "https://instagram.com/anagha_designs"
     }
   ];
 
+  // Update categories to match the new data
   const categories = [
     { key: 'all', label: 'All Projects' },
-    { key: 'food', label: 'Food & Beverage' },
-    { key: 'tech', label: 'Technology' },
-    { key: 'fashion', label: 'Fashion & Retail' },
+    { key: 'food-beverage', label: 'Food & Beverage' },
+    { key: 'hotel-resort', label: 'Hotel Resort' },
+    { key: 'fashion', label: 'Clothing & Fashion' }
   ];
 
   const filteredPortfolio = selectedCategory === 'all' 
@@ -133,80 +241,20 @@ function Portfolio() {
               </div>
             </div>
           ) : (
-            <div className="space-y-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPortfolio.map((project) => (
-                <div key={project.id} className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                  <div className="grid lg:grid-cols-2 gap-8">
-                    {/* Project Image */}
-                    <div className="relative">
-                      <img 
-                        src={project.images[0]} 
-                        alt={project.clientName}
-                        className="w-full h-96 lg:h-full object-cover"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                          {project.industry}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Project Details */}
-                    <div className="p-8 lg:p-12">
-                      <h2 className="text-3xl font-bold text-gray-800 mb-4">{project.clientName}</h2>
-                      <p className="text-lg text-gray-600 mb-6">{project.description}</p>
-
-                      {/* Services Provided */}
-                      <div className="mb-6">
-                        <h3 className="text-lg font-semibold text-gray-800 mb-3">Services Provided:</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {project.services.map((service, index) => (
-                            <span key={index} className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">
-                              {service}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Platforms */}
-                      <div className="mb-6">
-                        <h3 className="text-lg font-semibold text-gray-800 mb-3">Platforms:</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {project.platforms.map((platform, index) => (
-                            <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                              {platform}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Results */}
-                      <div className="mb-6">
-                        <h3 className="text-lg font-semibold text-gray-800 mb-3">Key Results:</h3>
-                        <ul className="space-y-2">
-                          {project.results.map((result, index) => (
-                            <li key={index} className="flex items-center">
-                              <svg className="w-5 h-5 text-pink-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                              </svg>
-                              <span className="text-gray-700">{result}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Project Duration */}
-                      <div className="mb-6">
-                        <span className="text-sm text-gray-500">Project Duration: </span>
-                        <span className="text-sm font-medium text-gray-700">{project.duration}</span>
-                      </div>
-
-                      {/* Testimonial */}
-                      <div className="bg-pink-50 p-6 rounded-xl border-l-4 border-pink-600">
-                        <p className="text-gray-700 italic mb-3">"{project.testimonial.text}"</p>
-                        <p className="text-sm font-medium text-pink-600">— {project.testimonial.author}</p>
-                      </div>
-                    </div>
+                <div
+                  key={project.id}
+                  className="bg-white rounded-2xl shadow-xl p-8 cursor-pointer hover:shadow-2xl transition"
+                  onClick={() => { setSelectedProject(project); setModalOpen(true); }}
+                >
+                  <h2 className="text-2xl font-bold text-gray-800 mb-2">{project.clientName}</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {project.platforms.map((platform, idx) => (
+                      <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                        {platform}
+                      </span>
+                    ))}
                   </div>
                 </div>
               ))}
@@ -214,6 +262,60 @@ function Portfolio() {
           )}
         </div>
       </section>
+
+      {/* Modal for project details */}
+      {modalOpen && selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4" onClick={() => setModalOpen(false)}>
+          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative max-h-full overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="absolute top-4 right-4 text-gray-500 hover:text-pink-600 text-2xl"
+              onClick={() => setModalOpen(false)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">{selectedProject.clientName}</h2>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {selectedProject.platforms.map((platform, idx) => (
+                <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                  {platform}
+                </span>
+              ))}
+            </div>
+            <img src={selectedProject.images[0]} alt={selectedProject.clientName} className="w-full h-64 object-cover rounded-xl mb-4" />
+            <p className="text-lg text-gray-600 mb-4">{selectedProject.description}</p>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Services Provided:</h3>
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.services.map((service, idx) => (
+                  <span key={idx} className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">{service}</span>
+                ))}
+              </div>
+            </div>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Key Results:</h3>
+              <ul className="space-y-1">
+                {selectedProject.results.map((result, idx) => (
+                  <li key={idx} className="flex items-center">
+                    <svg className="w-4 h-4 text-pink-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                    </svg>
+                    <span>{result}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mb-4">
+              <span className="text-sm text-gray-500">Project Duration: </span>
+              <span className="text-sm font-medium text-gray-700">{selectedProject.duration}</span>
+            </div>
+            <div className="bg-pink-50 p-4 rounded-xl border-l-4 border-pink-600">
+              <p className="text-gray-700 italic mb-2">"{selectedProject.testimonial.text}"</p>
+              <p className="text-sm font-medium text-pink-600">— {selectedProject.testimonial.author}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-pink-600 to-rose-600 text-white">

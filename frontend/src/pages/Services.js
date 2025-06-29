@@ -2,164 +2,91 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Services() {
-  const services = [
-    {
-      id: 1,
-      title: "Content Creation & Management",
-      description: "Eye-catching posts, stories, and campaigns that engage your audience and reflect your brand's personality.",
-      features: [
-        "Custom graphic designs",
-        "Engaging captions and hashtags",
-        "Stories and Reels creation",
-        "Content calendar planning",
-        "Brand-consistent visuals"
-      ],
-      icon: (
-        <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
-        </svg>
-      )
-    },
-    {
-      id: 2,
-      title: "Social Media Account Management",
-      description: "Complete social media account management including posting, engagement, and community building.",
-      features: [
-        "Daily content posting",
-        "Community engagement",
-        "Follower growth strategies",
-        "Performance monitoring",
-        "Crisis management"
-      ],
-      icon: (
-        <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
-          <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
-        </svg>
-      )
-    },
-    {
-      id: 3,
-      title: "Strategy Development & Consulting",
-      description: "Data-driven social media strategies tailored to your business goals and target audience.",
-      features: [
-        "Comprehensive audit",
-        "Custom strategy development",
-        "Target audience analysis",
-        "Competitor research",
-        "ROI optimization"
-      ],
-      icon: (
-        <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-          <path fillRule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
-        </svg>
-      )
-    },
-    {
-      id: 4,
-      title: "Brand Building & Positioning",
-      description: "Helping brands establish a strong digital presence and authentic voice online.",
-      features: [
-        "Brand voice development",
-        "Visual identity consistency",
-        "Brand storytelling",
-        "Reputation management",
-        "Thought leadership content"
-      ],
-      icon: (
-        <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-        </svg>
-      )
-    },
-    {
-      id: 5,
-      title: "Analytics & Reporting",
-      description: "Comprehensive performance tracking and detailed insights to measure your social media success.",
-      features: [
-        "Monthly performance reports",
-        "Engagement analytics",
-        "Growth tracking",
-        "ROI analysis",
-        "Strategy optimization recommendations"
-      ],
-      icon: (
-        <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
-        </svg>
-      )
-    },
-    {
-      id: 6,
-      title: "Campaign Management",
-      description: "End-to-end management of social media campaigns from planning to execution and analysis.",
-      features: [
-        "Campaign planning & strategy",
-        "Creative development",
-        "Multi-platform execution",
-        "Real-time monitoring",
-        "Performance optimization"
-      ],
-      icon: (
-        <svg className="w-12 h-12 text-pink-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
-        </svg>
-      )
-    }
-  ];
+  const services = [];
 
   const packages = [
     {
-      name: "Starter",
-      price: "Starting at ₹15,000",
+      name: "Basic",
+      price: "₹12,499",
       period: "/month",
-      description: "Perfect for small businesses getting started with social media",
+      description: "Perfect for individuals and small businesses starting with social media.",
       features: [
-        "2-3 social media platforms",
-        "10 posts per month",
-        "Basic analytics reporting",
-        "Community management",
-        "Email support"
+        "Profile Audit & Optimization",
+        "Content Calendar Planning",
+        "12 Custom Content (Posts + Reels)",
+        "Captions with Hashtags & Keywords"
       ],
       popular: false
     },
     {
-      name: "Growth",
-      price: "Starting at ₹25,000",
+      name: "Premium",
+      price: "₹19,499",
       period: "/month",
-      description: "Ideal for growing businesses looking to expand their reach",
+      description: "Comprehensive solution for brands seeking growth and advanced strategy.",
       features: [
-        "4-5 social media platforms",
-        "20 posts per month",
-        "Advanced analytics & insights",
-        "Stories & Reels creation",
-        "Priority support",
-        "Monthly strategy consultation"
+        "Profile Audit & Optimization",
+        "Content Calendar Planning",
+        "20 Custom Content (Posts + Reel)",
+        "Captions with Hashtags & Keywords",
+        "Competitor Analysis",
+        "Story Strategy & Highlights Design",
+        "Monthly Analytics Report",
+        "Engagement Support (Comments + DMs)",
+        "1:1 Strategy Call (Monthly)",
+        "Ad Strategy/Boosting Guidance",
+        "Brand Kit Creation"
       ],
       popular: true
+    }
+  ];
+
+  const individualServices = [
+    {
+      name: "Instagram Audit",
+      description: "In-depth profile review + optimization tips (bio, highlights, aesthetics, content suggestions)",
+      price: "₹1,999"
     },
     {
-      name: "Enterprise",
-      price: "Custom Pricing",
-      period: "",
-      description: "Comprehensive solution for established businesses",
-      features: [
-        "All social media platforms",
-        "Unlimited posts",
-        "Complete campaign management",
-        "Dedicated account manager",
-        "24/7 support",
-        "Custom strategy development",
-        "Influencer partnerships"
-      ],
-      popular: false
+      name: "Strategy Session",
+      description: "60–90 min 1:1 call + personalized content roadmap, niche clarity, engagement plan",
+      price: "₹2,999"
+    },
+    {
+      name: "Content Calendar + Captions",
+      description: "12 content ideas + custom hooks + full captions + SEO hashtags",
+      price: "₹5,999"
+    },
+    {
+      name: "Story Strategy",
+      description: "Story templates, highlight covers, engagement prompts, CTA framework",
+      price: "₹2,500"
+    },
+    {
+      name: "Reels Script Pack",
+      description: "5–10 Reels ideas with trends, scripts, hooks & CTA",
+      price: "₹2,000 – ₹3,500"
+    },
+    {
+      name: "Brand Kit Creation",
+      description: "Fonts, colors, voice/tone, story templates — for a cohesive identity",
+      price: "₹3,500"
+    },
+    {
+      name: "Analytics Report Only",
+      description: "Monthly insights review + action plan (ideal for self-managed creators)",
+      price: "₹1,000 – ₹1,500"
+    },
+    {
+      name: "Ad Strategy / Boosting Guide",
+      description: "Custom guidance for paid promotions that convert",
+      price: "₹1,999"
     }
   ];
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
+      {/*
       <section className="py-16 bg-gradient-to-r from-pink-50 to-rose-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-800 mb-6">My Services</h1>
@@ -168,8 +95,11 @@ function Services() {
           </p>
         </div>
       </section>
+      */}
 
       {/* Services Grid */}
+      {/* No main services to display, so show a placeholder or remove the section for a cleaner look */}
+      {/*
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -195,6 +125,7 @@ function Services() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Pricing Section */}
       <section className="py-16 bg-gradient-to-r from-pink-50 to-rose-50">
@@ -249,6 +180,28 @@ function Services() {
         </div>
       </section>
 
+      {/* Individual Services Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">One-Time Services</h2>
+            <p className="text-lg text-gray-600">Quick solutions for specific needs—no monthly commitment required.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {individualServices.map((service, idx) => (
+              <div key={idx} className="bg-gradient-to-br from-pink-50 to-rose-100 rounded-2xl p-8 shadow-md flex flex-col items-center text-center border border-pink-100">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{service.name}</h3>
+                <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
+                <div className="text-2xl font-bold text-pink-600 mb-2">{service.price}</div>
+                <Link to="/contact" className="mt-auto bg-pink-600 text-white px-6 py-2 rounded-full hover:bg-pink-700 transition-colors font-medium shadow">
+                  Book Now
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -263,6 +216,24 @@ function Services() {
             <Link to="/portfolio" className="border-2 border-pink-600 text-pink-600 px-8 py-3 rounded-full hover:bg-pink-600 hover:text-white transition-colors">
               View My Work
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Get in Touch Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Get in Touch</h2>
+            <p className="text-lg text-gray-600 mb-4">For collaborations, inquiries, or to connect directly:</p>
+            <div className="flex justify-center items-center space-x-4 mt-4">
+              <span className="text-gray-700 font-semibold">Instagram:</span>
+              <a href="https://instagram.com/geetharangaseeli" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg className="w-8 h-8 text-pink-600 hover:text-pink-800 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>

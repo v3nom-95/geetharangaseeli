@@ -70,8 +70,8 @@ function Contact() {
 
       <div className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
+          <div className="grid lg:grid-cols-1 gap-12">
+            {/* Contact Information Only, no form */}
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-8">Get in Touch</h2>
               
@@ -86,7 +86,7 @@ function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Email</h3>
-                    <p className="text-gray-600">Contact details will be updated soon</p>
+                    <p className="text-gray-600">geetharangaseeli@gmail.com</p>
                   </div>
                 </div>
                 
@@ -113,6 +113,46 @@ function Contact() {
                     <p className="text-gray-600">Within 24 hours</p>
                   </div>
                 </div>
+
+                <div className="flex items-start">
+                  <div className="bg-pink-100 p-3 rounded-full mr-4">
+                    <svg className="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3.5A1.5 1.5 0 013.5 2h13A1.5 1.5 0 0118 3.5v13a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 012 16.5v-13zM4 4v12h12V4H4zm6 10a1 1 0 100-2 1 1 0 000 2zm-4-3a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Phone</h3>
+                    <p className="text-gray-600">+91 9876543210</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-pink-100 p-3 rounded-full mr-4 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Instagram</h3>
+                    <a href="https://instagram.com/sociallygeetha" target="_blank" rel="noopener noreferrer" className="text-pink-700 font-medium hover:underline hover:text-pink-900 transition-colors flex items-center">
+                      @sociallygeetha
+                      <svg className="w-4 h-4 ml-1 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l8-8zM5 13l4 4H5v-4z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4 mt-4">
+                <span className="text-gray-700 font-semibold">Instagram:</span>
+                <a href="https://instagram.com/sociallygeetha" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                  className="flex items-center bg-gradient-to-br from-pink-100 to-rose-200 px-4 py-2 rounded-full shadow hover:scale-105 transition-transform group">
+                  <svg className="w-8 h-8 text-pink-600 group-hover:text-pink-800 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/>
+                  </svg>
+                  <span className="ml-2 text-pink-700 font-medium group-hover:text-pink-900 transition-colors">@sociallygeetha</span>
+                </a>
               </div>
 
               {/* Why Work With Me */}
@@ -145,150 +185,6 @@ function Contact() {
                   </li>
                 </ul>
               </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Start Your Project</h3>
-              
-              {submitStatus === 'success' && (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                  <div className="flex">
-                    <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                    <div>
-                      <h4 className="text-green-800 font-medium">Message sent successfully!</h4>
-                      <p className="text-green-700 text-sm">I'll get back to you within 24 hours.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {submitStatus === 'error' && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-                  <div className="flex">
-                    <svg className="w-5 h-5 text-red-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
-                    </svg>
-                    <div>
-                      <h4 className="text-red-800 font-medium">Error sending message</h4>
-                      <p className="text-red-700 text-sm">Please try again or email me directly.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
-                    <input 
-                      type="text" 
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="contact-input"
-                      placeholder="Your Name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                    <input 
-                      type="email" 
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="contact-input"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                    <input 
-                      type="text" 
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="contact-input"
-                      placeholder="Your Company"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
-                    <select 
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className="contact-input"
-                    >
-                      <option value="">Select Budget Range</option>
-                      <option value="under-15k">Under ₹15,000</option>
-                      <option value="15k-30k">₹15,000 - ₹30,000</option>
-                      <option value="30k-50k">₹30,000 - ₹50,000</option>
-                      <option value="above-50k">Above ₹50,000</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                    <input 
-                      type="text" 
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="contact-input"
-                      placeholder="Project Discussion"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Timeline</label>
-                    <select 
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleChange}
-                      className="contact-input"
-                    >
-                      <option value="">Select Timeline</option>
-                      <option value="asap">ASAP</option>
-                      <option value="1-2-weeks">1-2 weeks</option>
-                      <option value="1-month">Within 1 month</option>
-                      <option value="flexible">Flexible</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                  <textarea 
-                    rows="5"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="contact-input"
-                    placeholder="Tell me about your project, goals, and how I can help you succeed..."
-                  ></textarea>
-                </div>
-
-                <div className="text-center">
-                  <button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-pink-600 text-white px-8 py-3 rounded-full hover:bg-pink-700 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </button>
-                </div>
-              </form>
             </div>
           </div>
         </div>

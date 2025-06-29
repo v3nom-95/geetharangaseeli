@@ -92,16 +92,16 @@ function Home() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-600 font-display">50+</div>
+                  <div className="text-3xl font-bold text-pink-600 font-display">4+</div>
                   <div className="text-sm text-gray-600 font-medium">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-600 font-display">25+</div>
+                  <div className="text-3xl font-bold text-pink-600 font-display">4+</div>
                   <div className="text-sm text-gray-600 font-medium">Happy Clients</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-600 font-display">2+</div>
-                  <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+                  <div className="text-3xl font-bold text-pink-600 font-display">3+</div>
+                  <div className="text-sm text-gray-600 font-medium">Months Experience</div>
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ function Home() {
                 <div className="relative z-10">
                   <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white/20 backdrop-blur-sm">
                     <img 
-                      src="https://images.pexels.com/photos/8638300/pexels-photo-8638300.jpeg" 
+                      src="/images/g-3.png" 
                       alt="Social Media Manager" 
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                     />

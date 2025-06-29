@@ -22,7 +22,7 @@ function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1595349785606-5982d59ef635" 
+                src="/images/r1.jpeg" 
                 alt="Professional at work" 
                 className="rounded-2xl shadow-xl"
               />
@@ -108,7 +108,7 @@ function About() {
               </div>
             </div>
 
-            {/* Strategy Consulting */}
+            {/* Content Strategist */}
             <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <div className="flex items-center mb-6">
                 <div className="bg-pink-100 p-3 rounded-full mr-4">
@@ -117,17 +117,17 @@ function About() {
                     <path fillRule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">Strategy Consulting</h3>
+                <h3 className="text-xl font-bold text-gray-800">Content Strategist</h3>
               </div>
               <p className="text-gray-600 mb-4">
-                Developing comprehensive digital marketing strategies that align with business goals and drive measurable growth.
+                Specializing in developing content strategies that align with your brand voice and business goals, ensuring every piece of content has purpose and impact.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Digital Strategy</span>
-                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Analytics</span>
-                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Growth Planning</span>
-                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Market Research</span>
-                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Campaign Planning</span>
+                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Content Planning</span>
+                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Editorial Strategy</span>
+                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Brand Messaging</span>
+                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Storytelling</span>
+                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Content Optimization</span>
               </div>
             </div>
           </div>
