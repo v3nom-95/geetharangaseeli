@@ -25,7 +25,7 @@ function Portfolio() {
         "High-performing posts and stories"
       ],
       images: [
-        "https://i.imgur.com/foxinthefield-sample.jpg"
+        "/images/p1.png"
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
@@ -53,7 +53,7 @@ function Portfolio() {
         "Successful event promotions"
       ],
       images: [
-        "https://i.imgur.com/thedomecafe-sample.jpg"
+        "/images/p1.png"
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
@@ -109,7 +109,7 @@ function Portfolio() {
         "+21.9% follower growth in 90 days"
       ],
       images: [
-        "/images/lacasa1.png"
+        "/images/p4.png"
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
@@ -139,7 +139,7 @@ function Portfolio() {
         "31.0% reels content type"
       ],
       images: [
-        "/images/aurum1.png"
+        "/images/p6.png"
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
