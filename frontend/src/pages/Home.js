@@ -146,7 +146,7 @@ function Home() {
       </section>
 
       {/* Advanced Services Overview */}
-      <section className="section-advanced bg-white relative">
+      <section className="section-advanced bg-white !bg-white relative z-10" style={{backgroundColor: '#fff'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-pink-50 rounded-full border border-pink-100 text-pink-700 font-medium mb-8">
@@ -202,16 +202,35 @@ function Home() {
                 color: "from-teal-500 to-cyan-500"
               }
             ].map((service, index) => (
-              <div key={index} className="card-advanced group hover-lift bg-white shadow-xl rounded-3xl border border-gray-100">
+              <div key={index} 
+                className="card-advanced group hover-lift bg-white shadow-xl rounded-3xl border border-gray-100"
+                style={{
+                  background: '#fff',
+                  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.10)',
+                  border: '1px solid #f3f4f6',
+                  color: '#1a202c',
+                  position: 'relative',
+                  zIndex: 1
+                }}
+              >
                 <div className="p-8">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    style={{color: '#fff', background: 'unset'}}>
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4 font-display">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <h3 className="text-2xl font-bold mb-4 font-display" style={{color: '#1a202c'}}>{service.title}</h3>
+                  <p className="mb-6 leading-relaxed" style={{color: '#4b5563'}}>{service.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {service.features.map((feature, featureIndex) => (
-                      <span key={featureIndex} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-pink-100 hover:text-pink-700 transition-colors">
+                      <span key={featureIndex} 
+                        className="px-3 py-1 rounded-full text-sm font-medium transition-colors"
+                        style={{
+                          background: '#f3f4f6',
+                          color: '#374151',
+                          border: '1px solid #e5e7eb',
+                          fontWeight: 500
+                        }}
+                      >
                         {feature}
                       </span>
                     ))}
