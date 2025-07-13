@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
     subject: '',
-    message: '',
-    budget: '',
-    timeline: ''
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
@@ -20,40 +18,24 @@ function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('');
-
-    try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
+    // Replace YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_USER_ID with your EmailJS credentials
+    emailjs.send('service_hy9zb6r', 'template_wcw72xc', {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message
+    }, 'tl2gb8yib4D5v6CBg')
+      .then((result) => {
         setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          subject: '',
-          message: '',
-          budget: '',
-          timeline: ''
-        });
-      } else {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }, (error) => {
         setSubmitStatus('error');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
@@ -70,7 +52,35 @@ function Contact() {
 
       <div className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-1 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-8">Contact Form</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Name</label>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Email</label>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Subject</label>
+                  <input type="text" name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Message</label>
+                  <textarea name="message" value={formData.message} onChange={handleChange} required rows="5" className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+                </div>
+                <button type="submit" disabled={isSubmitting} className="w-full py-3 bg-pink-600 text-white font-bold rounded-lg hover:bg-pink-700 transition-colors">
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+                {submitStatus === 'success' && <p className="text-green-600 font-semibold mt-2">Message sent successfully!</p>}
+                {submitStatus === 'error' && <p className="text-red-600 font-semibold mt-2">Failed to send message. Please try again.</p>}
+              </form>
+            </div>
+            
             {/* Contact Information Only, no form */}
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-8">Get in Touch</h2>
