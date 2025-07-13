@@ -22,10 +22,10 @@ function Home() {
   return (
     <div>
       {/* Advanced Hero Section */}
-      <section className="hero-advanced min-h-screen flex flex-col justify-center relative overflow-hidden pt-24 md:pt-0">
+      <section className="hero-advanced min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* Animated Background Elements */}
         <div 
-          className="absolute inset-0 opacity-30 pointer-events-none"
+          className="absolute inset-0 opacity-30"
           style={{
             background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(236, 72, 153, 0.15) 0%, transparent 50%)`
           }}
@@ -39,8 +39,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Hero Content */}
-            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-slide-in-left' : 'opacity-0'}`}
-              style={{background: 'rgba(255,255,255,0.85)', borderRadius: '1.5rem', padding: '2rem 1.5rem', boxShadow: '0 4px 32px 0 rgba(236,72,153,0.08)'}}>
+            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-slide-in-left' : 'opacity-0'}`}>
               <div className="mb-6">
                 <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-pink-700 font-medium mb-6 hover:bg-white/30 transition-all duration-300">
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
@@ -108,8 +107,7 @@ function Home() {
             </div>
             
             {/* Hero Image */}
-            <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${isLoaded ? 'animate-slide-in-right' : 'opacity-0'}`}
-              style={{zIndex: 1}}>
+            <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${isLoaded ? 'animate-slide-in-right' : 'opacity-0'}`}>
               <div className="relative group">
                 {/* Background Decorations */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full blur-xl opacity-30 group-hover:opacity-40 transition-opacity animate-pulse"></div>
@@ -145,8 +143,6 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* Divider for better separation on all devices */}
-        <div className="w-full h-8 md:h-12 bg-gradient-to-b from-white to-pink-50 absolute bottom-0 left-0 z-20"></div>
       </section>
 
       {/* Advanced Services Overview */}
