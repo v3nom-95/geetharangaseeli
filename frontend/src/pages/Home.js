@@ -169,8 +169,11 @@ function Home() {
             {[
               {
                 icon: (
-                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                  // Social Media Marketing: Chat/Message/Hashtag icon
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <rect x="3" y="5" width="18" height="14" rx="4" fill="#ec4899"/>
+                    <path d="M7 10h6M7 14h4" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="18" cy="16" r="2" fill="#fff"/>
                   </svg>
                 ),
                 title: "Social Media Marketing",
@@ -180,9 +183,12 @@ function Home() {
               },
               {
                 icon: (
-                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                    <path fillRule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                  // Strategy Consulting: Bar chart/analytics icon
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <rect x="4" y="12" width="3" height="6" rx="1.5" fill="#8b5cf6"/>
+                    <rect x="10" y="8" width="3" height="10" rx="1.5" fill="#6366f1"/>
+                    <rect x="16" y="4" width="3" height="14" rx="1.5" fill="#a5b4fc"/>
+                    <path d="M3 20h18" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 ),
                 title: "Strategy Consulting",
@@ -192,8 +198,11 @@ function Home() {
               },
               {
                 icon: (
-                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                  // Brand Building: Shield/Badge icon
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" fill="#06b6d4" stroke="#06b6d4"/>
+                    <path d="M12 3v17" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="12" cy="12" r="2.5" fill="#fff"/>
                   </svg>
                 ),
                 title: "Brand Building",
