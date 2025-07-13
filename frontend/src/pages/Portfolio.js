@@ -25,7 +25,12 @@ function Portfolio() {
         "High-performing posts and stories"
       ],
       images: [
-        "/images/p1.png"
+        "/images/11.jpeg",
+        "/images/12.jpeg",
+        "/images/13.jpeg",
+        "/images/14.jpeg",
+        "/images/15.jpeg",
+        "/images/16.jpeg"
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
@@ -53,7 +58,10 @@ function Portfolio() {
         "Successful event promotions"
       ],
       images: [
-        "/images/p1.png"
+        "/images/21.jpeg",
+        "/images/22.jpeg",
+        "/images/23.jpeg",
+        "/images/24.jpeg"
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
@@ -81,7 +89,8 @@ function Portfolio() {
         "+8% follower growth in 90 days"
       ],
       images: [
-        "/images/p3.png"
+        "/images/31.jpeg",
+        "/images/32.jpeg",
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
@@ -93,10 +102,10 @@ function Portfolio() {
     },
     {
       id: 4,
-      clientName: "La Casa Brewery + Kitchen",
-      category: "food-beverage",
-      industry: "Brewery",
-      description: "Instagram management and analytics for La Casa Brewery + Kitchen. Focused on content creation, engagement, and audience growth for a vibrant brewery brand.",
+      clientName: "angel.lifecoach",
+      category: "influencers",
+      industry: "Life Coach / Influencer",
+      description: "Instagram management and analytics for angel.lifecoach. Focused on content creation, engagement, and audience growth for a vibrant coaching brand.",
       services: [
         "Instagram Content Creation",
         "Growth Analytics",
@@ -109,17 +118,19 @@ function Portfolio() {
         "+21.9% follower growth in 90 days"
       ],
       images: [
-        "/images/p4.png"
+        "/images/41.jpeg",
+        "/images/42.jpeg",
+        "/images/43.jpeg"
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
       testimonial: {
-        text: "La Casa Brewery's Instagram has seen a huge boost in engagement and reach. The creative content and analytics have made a real difference!",
-        author: "La Casa Brewery Team"
+        text: "angel.lifecoach's Instagram has seen a huge boost in engagement and reach. The creative content and analytics have made a real difference!",
+        author: "angel.lifecoach"
       },
-      instagram: "https://instagram.com/lacasabrewery"
+      instagram: "https://instagram.com/angel.lifecoach"
     },
-    {
+    /*{
       id: 5,
       clientName: "Aurum Brew Works",
       category: "food-beverage",
@@ -177,7 +188,7 @@ function Portfolio() {
         author: "Anagha Team"
       },
       instagram: "https://instagram.com/anagha_designs"
-    }
+    }*/
   ];
 
   // Update categories to match the new data
@@ -185,7 +196,8 @@ function Portfolio() {
     { key: 'all', label: 'All Projects' },
     { key: 'food-beverage', label: 'Food & Beverage' },
     { key: 'hotel-resort', label: 'Hotel Resort' },
-    { key: 'fashion', label: 'Clothing & Fashion' }
+    { key: 'fashion', label: 'Clothing & Fashion' },
+    { key: 'influencers', label: 'Influencers' }
   ];
 
   const filteredPortfolio = selectedCategory === 'all' 
@@ -282,7 +294,24 @@ function Portfolio() {
                 </span>
               ))}
             </div>
-            <img src={selectedProject.images[0]} alt={selectedProject.clientName} className="w-full h-64 object-cover rounded-xl mb-4" />
+            {/* Image carousel for all projects with multiple images, single image for others */}
+            {selectedProject.images && selectedProject.images.length > 1 ? (
+              <div className="flex overflow-x-auto gap-4 mb-4 pb-2 scrollbar-thin scrollbar-thumb-pink-200 scrollbar-track-pink-50">
+                {selectedProject.images.map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img}
+                    alt={selectedProject.clientName + ' screenshot ' + (idx + 1)}
+                    className="h-80 w-44 object-cover rounded-xl border-2 border-pink-200 shadow-md flex-shrink-0"
+                    style={{ minWidth: '176px' }}
+                  />
+                ))}
+              </div>
+            ) : (
+              selectedProject.images && selectedProject.images.length === 1 ? (
+                <img src={selectedProject.images[0]} alt={selectedProject.clientName} className="w-full h-64 object-cover rounded-xl mb-4" />
+              ) : null
+            )}
             <p className="text-lg text-gray-600 mb-4">{selectedProject.description}</p>
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Services Provided:</h3>
