@@ -202,7 +202,7 @@ function Home() {
                 color: "from-teal-500 to-cyan-500"
               }
             ].map((service, index) => (
-              <div key={index} className="card-advanced group hover-lift">
+              <div key={index} className="card-advanced group hover-lift bg-white shadow-xl rounded-3xl border border-gray-100">
                 <div className="p-8">
                   <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {service.icon}
