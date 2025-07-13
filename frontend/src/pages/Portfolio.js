@@ -104,7 +104,7 @@ function Portfolio() {
       id: 4,
       clientName: "angel.lifecoach",
       category: "influencers",
-      industry: "influencers",
+      industry: "Life Coach / Influencer",
       description: "Instagram management and analytics for angel.lifecoach. Focused on content creation, engagement, and audience growth for a vibrant coaching brand.",
       services: [
         "Instagram Content Creation",
@@ -118,15 +118,17 @@ function Portfolio() {
         "+21.9% follower growth in 90 days"
       ],
       images: [
-        "/images/p4.png"
+        "/images/41.jpeg",
+        "/images/42.jpeg",
+        "/images/43.jpeg"
       ],
       platforms: ["Instagram"],
       duration: "Ongoing",
       testimonial: {
-        text: "La Casa Brewery's Instagram has seen a huge boost in engagement and reach. The creative content and analytics have made a real difference!",
-        author: "La Casa Brewery Team"
+        text: "angel.lifecoach's Instagram has seen a huge boost in engagement and reach. The creative content and analytics have made a real difference!",
+        author: "angel.lifecoach"
       },
-      instagram: "https://instagram.com/lacasabrewery"
+      instagram: "https://instagram.com/angel.lifecoach"
     },
     /*{
       id: 5,
