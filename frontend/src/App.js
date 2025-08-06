@@ -53,7 +53,13 @@ function AnimatedRoutes() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-100">
+      <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        {/* 3D floating cubes background */}
+        <div className="absolute inset-0 -z-10 flex flex-wrap items-center justify-center pointer-events-none">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className="w-32 h-32 m-8 bg-gradient-to-tr from-white/10 to-white/5 rounded-3xl shadow-2xl animate-float-advanced" style={{ filter: 'drop-shadow(0 8px 24px #fff2)' }}></div>
+          ))}
+        </div>
         <Navbar />
         <AnimatedRoutes />
         <Footer />
